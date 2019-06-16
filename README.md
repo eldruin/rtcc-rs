@@ -5,7 +5,6 @@
 [![Docs](https://docs.rs/rtcc/badge.svg)](https://docs.rs/rtcc)
 -->
 [![Build Status](https://travis-ci.org/eldruin/rtcc-rs.svg?branch=master)](https://travis-ci.org/eldruin/rtcc-rs)
-[![Coverage Status](https://coveralls.io/repos/eldruin/rtcc-rs/badge.svg?branch=master)](https://coveralls.io/r/eldruin/rtcc-rs?branch=master)
 ![Maintenance Intention](https://img.shields.io/badge/maintenance-actively--developed-brightgreen.svg)
 
 This contains a set of data structures and traits to be implemented by real-time clock / calendar devices.
