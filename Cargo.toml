@@ -21,4 +21,3 @@ include = [
 
 [badges]
 travis-ci = { repository = "eldruin/rtcc-rs", branch = "master" }
-maintenance = { status = "actively-developed" }
