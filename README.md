@@ -6,6 +6,9 @@
 
 This contains a set of data structures and traits to be implemented by real-time clock / calendar devices.
 
+Drivers using this include:
+* [mcp794xx](https://github.com/eldruin/mcp794xx-rs)
+
 ## Support
 
 For questions, issues, feature requests, and other changes, please file an
