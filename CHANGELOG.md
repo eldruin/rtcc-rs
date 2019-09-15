@@ -8,3 +8,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 ...
+
+## [0.1.0] - 2019-09-15
+
+This is the initial release to crates.io. There may be some API changes in the
+future. All changes will be documented in this CHANGELOG.
+
+[Unreleased]: https://github.com/eldruin/rtcc-rs/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/eldruin/rtcc-rs/releases/tag/v0.1.0
