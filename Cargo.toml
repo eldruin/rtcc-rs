@@ -21,3 +21,6 @@ include = [
 
 [badges]
 travis-ci = { repository = "eldruin/rtcc-rs", branch = "master" }
+
+[dependencies]
+chrono = { version = "0.4", default-features = false }
