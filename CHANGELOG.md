@@ -7,7 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-...
+### Changed
+- Bumped minimum version of `chrono` to solve issues with `no-std`. Thanks to @Piroro-hs
 
 ## [0.2.0] - 2020-02-09
 ### Changed
