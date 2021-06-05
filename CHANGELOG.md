@@ -7,8 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+...
+
+## [0.2.1] - 2021-06-05
+
 ### Changed
-- Bumped minimum version of `chrono` to solve issues with `no-std`. Thanks to @Piroro-hs
+- Bumped minimum version of `chrono` to solve issues with `no-std`. Thanks to @Piroro-hs.
 
 ## [0.2.0] - 2020-02-09
 ### Changed
@@ -31,6 +35,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 This is the initial release to crates.io. There may be some API changes in the
 future. All changes will be documented in this CHANGELOG.
 
-[Unreleased]: https://github.com/eldruin/rtcc-rs/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/eldruin/rtcc-rs/compare/v0.2.1...HEAD
+[0.2.1]: https://github.com/eldruin/rtcc-rs/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/eldruin/rtcc-rs/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/eldruin/rtcc-rs/releases/tag/v0.1.0

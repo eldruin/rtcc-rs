@@ -1,8 +1,10 @@
 //! Data structures and traits to be implemented by
 //! real-time clock / calendar devices.
 
+#![doc(html_root_url = "https://docs.rs/rtcc/0.2.1")]
 #![deny(unsafe_code, missing_docs)]
 #![no_std]
+
 extern crate chrono;
 pub use chrono::{Datelike, NaiveDate, NaiveDateTime, NaiveTime, Timelike};
 
