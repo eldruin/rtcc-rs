@@ -1,11 +1,23 @@
-//! Data structures and traits to be implemented by
-//! real-time clock / calendar devices.
+//! Data structures and traits to be implemented by real-time clock / calendar devices.
+//!
+//! Prefer to use only the methods from the `DateTimeAccess` rather than the individual
+//! methods from the `Rtcc` trait to avoid situations where the passing of time
+//! makes the results of the method calls inconsistent if you combine the results
+//! of several methods.
+//!
+//! For example, this can happen at certain timepoints:
+//! 1. The time is `01:59:59`
+//! 2. A call to `hours()` returns 1.
+//! 3. The time is increased to `02:00:00`.
+//! 4. A call to `minutes()` returns 0.
+//! 5. A call to `seconds()` returns 0.
+//! 6. Your system thinks it is `01:00:00`.
+//!
+//! The same applies to the date as well, as well as when calling setter methods.
 
-#![doc(html_root_url = "https://docs.rs/rtcc/0.2.1")]
 #![deny(unsafe_code, missing_docs)]
 #![no_std]
 
-extern crate chrono;
 pub use chrono::{Datelike, NaiveDate, NaiveDateTime, NaiveTime, Timelike};
 
 /// Hours in either 12-hour (AM/PM) or 24-hour format
@@ -19,40 +31,78 @@ pub enum Hours {
     H24(u8),
 }
 
-/// Real-Time Clock / Calendar
-pub trait Rtcc {
+/// Real-Time Clock / Calendar DateTimeAccess trait to read/write a complete
+/// date/time.
+///
+/// Prefer to use only these methods rather than the individual methods from the
+/// `Rtcc` trait to avoid situations where the passing of time makes the results
+/// of the method calls inconsistent if you combine the results of several methods.
+///
+/// For example, this can happen at certain timepoints:
+/// 1. The time is `01:59:59`
+/// 2. A call to `hours()` returns 1.
+/// 3. The time is increased to `02:00:00`.
+/// 4. A call to `minutes()` returns 0.
+/// 5. A call to `seconds()` returns 0.
+/// 6. Your system thinks it is `01:00:00`.
+///
+/// The same applies to the date as well, as well as when calling setter methods.
+pub trait DateTimeAccess {
     /// Error type
     type Error;
 
+    /// Read the date and time.
+    fn datetime(&mut self) -> Result<NaiveDateTime, Self::Error>;
+
+    /// Set the date and time.
+    ///
+    /// This will set the hour operating mode to 24h and the weekday to the
+    /// day number starting from Sunday = 1.
+    fn set_datetime(&mut self, datetime: &NaiveDateTime) -> Result<(), Self::Error>;
+}
+
+/// Real-Time Clock / Calendar trait
+///
+/// If you want to combine calls to these methods, prefer to use only
+/// the `DateTimeAccess` trait to avoid situations where the passing of time makes the results
+/// of the method calls inconsistent.
+///
+/// For example, this can happen at certain timepoints:
+/// 1. The time is `01:59:59`
+/// 2. A call to `hours()` returns 1.
+/// 3. The time is increased to `02:00:00`.
+/// 4. A call to `minutes()` returns 0.
+/// 5. A call to `seconds()` returns 0.
+/// 6. Your system thinks it is `01:00:00`.
+///
+/// The same applies to the date, as well as when calling setter methods.
+pub trait Rtcc: DateTimeAccess {
     /// Read the seconds.
-    fn get_seconds(&mut self) -> Result<u8, Self::Error>;
+    fn seconds(&mut self) -> Result<u8, Self::Error>;
 
     /// Read the minutes.
-    fn get_minutes(&mut self) -> Result<u8, Self::Error>;
+    fn minutes(&mut self) -> Result<u8, Self::Error>;
 
     /// Read the hours.
-    fn get_hours(&mut self) -> Result<Hours, Self::Error>;
+    fn hours(&mut self) -> Result<Hours, Self::Error>;
 
     /// Read the time.
-    fn get_time(&mut self) -> Result<NaiveTime, Self::Error>;
+    fn time(&mut self) -> Result<NaiveTime, Self::Error>;
 
     /// Read the day of the week [1-7].
-    fn get_weekday(&mut self) -> Result<u8, Self::Error>;
+    fn weekday(&mut self) -> Result<u8, Self::Error>;
 
     /// Read the day of the month [1-31].
-    fn get_day(&mut self) -> Result<u8, Self::Error>;
+    fn day(&mut self) -> Result<u8, Self::Error>;
 
     /// Read the month [1-12].
-    fn get_month(&mut self) -> Result<u8, Self::Error>;
+    fn month(&mut self) -> Result<u8, Self::Error>;
 
     /// Read the year (e.g. 2000).
-    fn get_year(&mut self) -> Result<u16, Self::Error>;
+    fn year(&mut self) -> Result<u16, Self::Error>;
 
     /// Read the date.
-    fn get_date(&mut self) -> Result<NaiveDate, Self::Error>;
-
-    /// Read the date and time.
-    fn get_datetime(&mut self) -> Result<NaiveDateTime, Self::Error>;
+    fn date(&mut self) -> Result<NaiveDate, Self::Error>;
 
     /// Set the seconds [0-59].
     fn set_seconds(&mut self, seconds: u8) -> Result<(), Self::Error>;
@@ -82,10 +132,4 @@ pub trait Rtcc {
 
     /// Set the date.
     fn set_date(&mut self, date: &NaiveDate) -> Result<(), Self::Error>;
-
-    /// Set the date and time.
-    ///
-    /// This will set the hour operating mode to 24h and the weekday to the
-    /// day number starting from Sunday = 1.
-    fn set_datetime(&mut self, datetime: &NaiveDateTime) -> Result<(), Self::Error>;
 }
