@@ -2,6 +2,7 @@
 
 [![crates.io](https://img.shields.io/crates/v/rtcc.svg)](https://crates.io/crates/rtcc)
 [![Docs](https://docs.rs/rtcc/badge.svg)](https://docs.rs/rtcc)
+![MSRV](https://img.shields.io/badge/rustc-1.31+-blue.svg)
 [![Build Status](https://github.com/eldruin/rtcc-rs/workflows/Build/badge.svg)](https://github.com/eldruin/rtcc-rs/actions?query=workflow%3ABuild)
 
 This contains a set of data structures and traits to be implemented by real-time clock / calendar devices.
