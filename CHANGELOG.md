@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ...
 
+## [0.3.0] - 2022-02-19
+### Changed
+- [breaking-change] Extract the `datetime()` and `set_datetime()` methods into a
+  separate `DateTimeAccess` trait and recommend using only that trait.
+- [breaking-change] Remove `get_` from all method names to comply with the Rust API guidelines.
+
 ## [0.2.1] - 2021-06-05
 
 ### Changed
