@@ -21,7 +21,7 @@
 pub use chrono::{Datelike, NaiveDate, NaiveDateTime, NaiveTime, Timelike};
 
 /// Hours in either 12-hour (AM/PM) or 24-hour format
-#[derive(Debug, Clone, Copy, PartialEq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub enum Hours {
     /// AM [1-12]
     AM(u8),

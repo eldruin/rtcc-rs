@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+- Implemented common traits for `Hours`.
+
 ### Changed
 - Raised MSRV to 1.62.0.
 
