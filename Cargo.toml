@@ -1,6 +1,6 @@
 [package]
 name = "rtcc"
-version = "0.3.0"
+version = "0.3.1"
 authors = ["Diego Barrios Romero <eldruin@gmail.com>"]
 repository = "https://github.com/eldruin/rtcc-rs"
 license = "MIT OR Apache-2.0"

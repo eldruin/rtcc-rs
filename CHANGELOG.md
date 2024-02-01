@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 <!-- next-header -->
 ## [Unreleased] - ReleaseDate
 
+## [0.3.1] - 2024-02-01
+
 ### Added
 - Implemented common traits for `Hours`.
 
@@ -48,7 +50,8 @@ This is the initial release to crates.io. There may be some API changes in the
 future. All changes will be documented in this CHANGELOG.
 
 <!-- next-url -->
-[Unreleased]: https://github.com/eldruin/rtcc-rs/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/eldruin/rtcc-rs/compare/v0.3.1...HEAD
+[0.3.1]: https://github.com/eldruin/rtcc-rs/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/eldruin/rtcc-rs/compare/v0.2.1...v0.3.0
 [0.2.1]: https://github.com/eldruin/rtcc-rs/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/eldruin/rtcc-rs/compare/v0.1.0...v0.2.0
