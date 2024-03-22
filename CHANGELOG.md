@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 <!-- next-header -->
 ## [Unreleased] - ReleaseDate
 
+## [0.3.2] - 2024-03-22
+
+### Added
+- Expose `DateTime` type to be used as replacement for some deprecated methods.
+
 ## [0.3.1] - 2024-02-01
 
 ### Added
