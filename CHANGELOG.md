@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 <!-- next-header -->
 ## [Unreleased] - ReleaseDate
 
+## [0.3.2] - 2024-03-25
+
 ### Added
 - Expose `DateTime` type to be used as replacement for some deprecated methods.
 
@@ -53,7 +55,8 @@ This is the initial release to crates.io. There may be some API changes in the
 future. All changes will be documented in this CHANGELOG.
 
 <!-- next-url -->
-[Unreleased]: https://github.com/eldruin/rtcc-rs/compare/v0.3.1...HEAD
+[Unreleased]: https://github.com/eldruin/rtcc-rs/compare/v0.3.2...HEAD
+[0.3.2]: https://github.com/eldruin/rtcc-rs/compare/v0.3.1...v0.3.2
 [0.3.1]: https://github.com/eldruin/rtcc-rs/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/eldruin/rtcc-rs/compare/v0.2.1...v0.3.0
 [0.2.1]: https://github.com/eldruin/rtcc-rs/compare/v0.2.0...v0.2.1
