@@ -14,6 +14,10 @@
 //! 6. Your system thinks it is `01:00:00`.
 //!
 //! The same applies to the date as well, as well as when calling setter methods.
+//!
+//! # Features
+//!
+//! The optional `defmt-03` feature implements [defmt::Format] on some types.
 
 #![deny(unsafe_code, missing_docs)]
 #![no_std]
@@ -22,6 +26,7 @@ pub use chrono::{DateTime, Datelike, NaiveDate, NaiveDateTime, NaiveTime, Timeli
 
 /// Hours in either 12-hour (AM/PM) or 24-hour format
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[cfg_attr(feature = "defmt-03", derive(defmt::Format))]
 pub enum Hours {
     /// AM [1-12]
     AM(u8),
