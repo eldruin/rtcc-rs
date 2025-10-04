@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased] - ReleaseDate
 
 ### Added
-- Add optional `defmt-03` feature implementing `defmt::Format` on some types.
+- Add optional `defmt` feature implementing `defmt::Format` on some types.
 
 ## [0.3.2] - 2024-03-25
 
