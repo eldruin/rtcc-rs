@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 <!-- next-header -->
 ## [Unreleased] - ReleaseDate
 
+## [0.4.0] - 2025-10-10
+
 ### Added
 - Add optional `defmt` feature implementing `defmt::Format` on some types.
 
@@ -58,7 +60,8 @@ This is the initial release to crates.io. There may be some API changes in the
 future. All changes will be documented in this CHANGELOG.
 
 <!-- next-url -->
-[Unreleased]: https://github.com/eldruin/rtcc-rs/compare/v0.3.2...HEAD
+[Unreleased]: https://github.com/eldruin/rtcc-rs/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/eldruin/rtcc-rs/compare/v0.3.2...v0.4.0
 [0.3.2]: https://github.com/eldruin/rtcc-rs/compare/v0.3.1...v0.3.2
 [0.3.1]: https://github.com/eldruin/rtcc-rs/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/eldruin/rtcc-rs/compare/v0.2.1...v0.3.0
