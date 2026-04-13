@@ -22,7 +22,11 @@
 #![deny(unsafe_code, missing_docs)]
 #![no_std]
 
-pub use chrono::{DateTime, Datelike, NaiveDate, NaiveDateTime, NaiveTime, Timelike};
+// TODO decide on a feature to select one of the two implementations
+// pub use chrono::{DateTime, Datelike, NaiveDate, NaiveDateTime, NaiveTime, Timelike};
+pub use datetime::{Datelike, NaiveDate, NaiveDateTime, NaiveTime, Timelike};
+
+mod datetime;
 
 /// Hours in either 12-hour (AM/PM) or 24-hour format
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
